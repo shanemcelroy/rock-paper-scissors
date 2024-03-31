@@ -17,9 +17,25 @@ function playRound(playerSelection, computerSelection) {
             default:
                 return "You tied! You both chose rock!";
         }
+    } else if (playerSelection === 'paper') {
+        switch (getComputerChoice) {
+            case 'rock':
+                return "You win! Paper beats rock!";
+            case 'scissors':
+                return "You lose! Scissors beats paper!";
+            default:
+                return "You tied! You both chose paper!";
+        }
+    } else if (playerSelection === 'scissors') {
+        switch (getComputerChoice) {
+            case 'rock':
+                return "You lose! Rock beats scissors!";
+            case 'paper':
+                return "You win! Scissors beats paper!";
+            default:
+                return "You tied! You both chose scissors!";
+        }
     }
-    
-
 }
 playRound(getUserChoice, getComputerChoice)
 //Wrap the playRound function into a playGame function to play a 5-round game
