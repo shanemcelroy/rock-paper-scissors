@@ -8,16 +8,17 @@ let getComputerChoice = choices[randInt]
 let getUserChoice = prompt("Choose 'Rock', 'Paper', or 'Scissors': ").toLowerCase()
 //Create a playRound function that takes the user and computer choice as parameters and returns a string if you win or lose
 function playRound(playerSelection, computerSelection) {
-    switch (playerSelection === 'rock') {
-        case computerSelection === 'paper':
-            console.log("You lose! Paper beats rock!")
-            break;
-        case computerSelection === 'scissors':
-            console.log("You win! Rock beats scissors!")
-            break;
-        default:
-            console.log("You tied! You both chose rock!") 
+    if (playerSelection === 'rock') {
+        switch (getComputerChoice) {
+            case 'paper':
+                return "You lose! Paper beats rock!";
+            case 'scissors':
+                return "You win! Rock beats scissors!";
+            default:
+                return "You tied! You both chose rock!";
+        }
     }
+    
 
 }
 playRound(getUserChoice, getComputerChoice)
